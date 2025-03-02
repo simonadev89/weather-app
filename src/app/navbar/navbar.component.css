@@ -1,0 +1,40 @@
+.custom-navbar {
+    position: relative ;
+    width: 320px;
+    height: 100vh;
+    padding: 1rem;
+    font-size: 25px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.custom-navbar .nav-link {
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px;
+    transition: font-size 0.2s ease;
+}
+
+.custom-navbar .nav-link:hover {
+    font-size: 26px; 
+}
+.custom-navbar .nav-link.active {
+    font-size: 30px; /* Ingrandisce il link attivo */
+    color: white; /* Cambia il colore, se desideri */
+    transition: font-size 0.3s ease, color 0.3s ease;
+}
+@media (max-width: 870px) {
+    .custom-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: 1.2rem;
+        justify-content: center;
+        
+    }
+}

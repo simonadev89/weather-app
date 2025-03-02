@@ -1,0 +1,19 @@
+<div *ngIf="city" class="weather-card"  >
+  <span class="day">{{city.day}}</span>
+  <div class="weather-container">
+     <p class="cityName">{{city.cityName | uppercase }}</p>
+  <span class="temp"><i class="bi bi-thermometer-half"></i>
+    {{city.temp | number:'1.0-0'}}°C</span> 
+<img [src]="city.icon" alt="Weather icon">
+<span  class="tempMin"><i class="bi bi-thermometer-snow"></i>{{city.tempMin | number:'1.0-0'}}°C </span>
+<span  class="tempMax"><i class="bi bi-thermometer-sun"></i>{{city.tempMax | number:'1.0-0'}}°C</span>
+
+<p class="temp2">Feels Like <strong>{{city.feelsLike | number:'1.0-0'}}°C</strong></p>
+ 
+  <p class="">{{city.main}} ({{city.mainCondition}})</p>
+  <p class=""><i class="bi bi-droplet-half" style="color: blue;"></i>{{city.humidity}}%</p>
+  <p class=""><i class="bi bi-wind"></i> {{ city.windSpeed | number:'1.0-0'}} km/h 
+    <app-wind-direction [windDirection]="city.windDirection"></app-wind-direction></p>
+  <p class=""> <i class="bi bi-brightness-alt-high-fill" style="color: orange;"></i>{{city.sunrise | slice:0:5 }}</p>
+  <p class=""><i class="bi bi-moon-stars-fill" style="color: yellow;"></i>{{city.sunset | slice:0:5}}</p>
+    </div>

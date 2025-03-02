@@ -1,0 +1,48 @@
+.input-container {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    height: 35vh;
+    gap: 30px;
+}
+
+.input-container input {
+    width: 50%;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.input-container button {
+    font-size: 1rem;
+    padding: 10px 15px;
+    white-space: nowrap;
+    
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 85%;
+    max-width: 900px;  
+    min-height: 200px;
+    background: rgba(255, 255, 255, 0.595);
+    color: black;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: .25rem;
+    border: 3px solid #3760bb;
+    box-shadow: 0 0 30px rgba(100, 181, 246, 0.5);
+    box-sizing: border-box;
+
+}
+
+@media (max-width: 870px) {
+    .input-container {
+        padding-top: 250px;
+        
+    }
+}

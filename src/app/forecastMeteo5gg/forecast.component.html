@@ -1,0 +1,37 @@
+<form class="input-container" [formGroup]="FormForecast" (ngSubmit)="searchCityForecast(FormForecast.value.city)">
+    <input type="text" class="form-control" placeholder="&#xf52a; Search location" formControlName="city" style="font-family: Bootstrap-icons, sans-serif;">
+    <button type="submit" class="btn btn-primary" [disabled]="!FormForecast.valid">Search</button>
+  </form>
+  
+
+  <div *ngIf="dailyForecasts.length > 0" class="card-container"> 
+    <h3>{{currentCityName}} </h3>
+   <div *ngFor="let daily of dailyForecasts">
+    <app-daily-summary [daily]="daily" [cityName]="currentCityName"></app-daily-summary>
+   
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div>

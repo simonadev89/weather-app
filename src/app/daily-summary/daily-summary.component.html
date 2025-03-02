@@ -1,0 +1,53 @@
+<div class="daily-summary-card">
+    <div class="calendar-box">
+      <div> {{ daily.day | date:'EEE' }}</div>
+      <div>{{ daily.day | date:'d' }}</div>
+    </div>
+    <img class="weather-icon" [src]="getIconUrl()" alt="Weather Icon">
+    <span class="tempMin"><i class="bi bi-thermometer-snow"></i>{{daily.tempMin | number:'1.0-0'}}°C</span>
+    <span  class="tempMax"><i class="bi bi-thermometer-sun"></i>{{daily.tempMax | number:'1.0-0'}}°C </span>
+    
+    <button class="btn btn-primary" (click)="toggleDetails()">{{showDetails? 'Hide' : 'Info'}}</button>
+</div>
+    <div *ngIf="showDetails" class="details-table">
+
+      <table >
+        <thead>
+          <tr>
+        <th>Time</th>
+        <th>Temp</th>
+        <th>Weather Condition</th>
+        <th>Feels Like</th>
+        <th>Humidity</th>
+        <th>Rain %</th>
+        <th>Wind Speed & Cloud Cover</th>
+          </tr>
+        </thead>
+        <tbody>
+      
+          <tr *ngFor="let hourlyForecast of daily.hourly">
+      <td>{{hourlyForecast.time}}</td>
+      <td>{{hourlyForecast.temp | number:'1.0-0'}}°C <img [src]="hourlyForecast.iconUrl" alt="Weather icon"> </td>
+      <td>{{hourlyForecast.main}} ({{hourlyForecast.mainCondition}})</td>
+      <td>{{hourlyForecast.feelsLike | number:'1.0-0'}}°C</td>
+      <td>{{hourlyForecast.umidity}}%</td>
+      <td>{{hourlyForecast.PoP}}%</td>
+      
+      <td>{{hourlyForecast.windSpeed | number:'1.0-0'}} km/h{{hourlyForecast.clouds}}</td>
+          </tr>
+          </tbody>
+
+    
+</table>
+
+
+
+
+
+
+    </div>
+
+
+
+
+

@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+/* Card style per Daily Summary */
+.daily-summary-card {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.595); /* Trasparente ma con più visibilità */
+    color: black; /* Colore del testo più scuro per contrasto */
+    font-size: 20px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 15px; /* Bordo arrotondato per una sensazione più morbida */
+    border: 2px solid #3760bb; /* Bordo blu chiaro */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombra leggera per effetto di profondità */
+    width: 90%;
+    max-width: 900px;
+}
+.calendar-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+    padding: 5px 10px;
+    min-width: 60px;
+    text-transform: uppercase;
+}
+
+
+.tempMin {
+    color: #062dbbdd;
+    font-size: 2rem;
+    font-weight: 500;
+    
+}
+
+.tempMax {
+    color: red;
+    font-size: 2rem;
+    font-weight: 500;
+    
+    
+}
+
+button {
+    font-size: 1rem;
+    padding: 6px 12px;
+    white-space: nowrap;
+    
+}
+
+
+.details-table {
+    display: flex;
+    justify-content: center;
+    width: 100%;          /* Larghezza al 100% del suo contenitore */
+    max-width: 100%;       /* Non va oltre il suo genitore */
+    overflow-x: auto;      /* Se proprio qualcosa sfora, scroll orizzontale */
+    box-sizing: border-box;
+    margin: 8px;
+}
+
+thead tr {
+    background-color: rgba(240, 240, 240, 0.8);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid black;   /* Righe nere */
+    background: rgba(255, 255, 255, 0.595);
+}
+
+
+table img {
+    width: 70px;
+    height: 70px;
+}

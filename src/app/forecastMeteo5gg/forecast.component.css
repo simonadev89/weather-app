@@ -1,0 +1,26 @@
+.input-container {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    height: 35vh;
+    gap: 30px;
+}
+
+.input-container input {
+    width: 50%;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.input-container button {
+    font-size: 1rem;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+h3 {
+    text-align:center;
+    font-size: 45px;
+    color: black
+}
+
