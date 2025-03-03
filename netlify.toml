@@ -1,7 +1,7 @@
 [build]
 base = ""
 command = "npm run build"
-publish = "dist/weather-app"
+publish = "dist/weather-app/browser"
 
 [[redirects]]
 from = "/*"
