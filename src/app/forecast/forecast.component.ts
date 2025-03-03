@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { DailyForecast, WeatherForecastService, HourlyForecast } from '../service/weather-forecast.service';
 import { formatDate, formatTime, kelvinToCelsius } from '../utils/weather-utils'
 import { DailySummaryComponent } from "../daily-summary/daily-summary.component";
+
 @Component({
   selector: 'app-forecast',
   imports: [ReactiveFormsModule, CommonModule, DailySummaryComponent],
@@ -14,6 +15,7 @@ export class ForecastComponent {
 
   FormForecast!: FormGroup;
   currentCityName: string = '';
+  currentCityCountry: string = '';
   dailyForecasts: DailyForecast[] = [];
   
   
@@ -23,15 +25,16 @@ export class ForecastComponent {
   ngOnInit(): void {
     this.FormForecast= new FormGroup({
       city: new FormControl('', [Validators.required, Validators.minLength(3)])
-    }) }
+    }) 
+  }
 
   
     searchCityForecast(city:string){
       this.weatherForecastService.getWeatherForecast(city).subscribe((data: any) => {
         console.log(data);
-       
+      
         this.currentCityName = data.city.name; 
-
+        this.currentCityCountry = data.city.country
         //creo una mappa con le chiavi giornaliere string è il gg l'array di HourlyForecast lista delle previsioni orarie
         const mapByDay = new Map<string, HourlyForecast[]>(); 
 
@@ -54,17 +57,17 @@ export class ForecastComponent {
           
           windSpeed: item.wind.speed * 3.6,
         };
+
         if (!mapByDay.has(date)) {
           mapByDay.set(date, []);
       }
+
       mapByDay.get(date)?.push(hourlyForecast);
   });
 
   this.dailyForecasts = Array.from(mapByDay.entries()).map(([day, hourlyForecasts]) => {
     return{
-        day: day,
-        sunrise: new Date(data.city.sunrise * 1000).toLocaleTimeString("en-EN"),
-        sunset: new Date(data.city.sunset * 1000).toLocaleTimeString("en-EN"),
+        day: day, 
         tempMin: Math.min(...hourlyForecasts.map(forecast => forecast.temp)),
         tempMax: Math.max(...hourlyForecasts.map(forecast => forecast.temp)),
         hourly: hourlyForecasts
@@ -74,11 +77,14 @@ export class ForecastComponent {
 
   console.log("Daily forecasts:", this.dailyForecasts);
 
-  this.FormForecast.reset(); // Resetto il form dopo la ricerca
-});
-
+  this.FormForecast.reset(); 
     
-  
-  
-  
-  }}
+  },
+
+  error => {
+    console.log(error);
+    alert("City not found");
+    window.location.href = '/not-found'; 
+  }
+);
+}}

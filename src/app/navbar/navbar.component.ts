@@ -3,8 +3,6 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-
-
 @Component({
   selector: 'app-navbar',
   imports: [RouterModule, ReactiveFormsModule, CommonModule],
@@ -12,8 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
-
-
 
 }

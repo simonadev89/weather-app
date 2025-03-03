@@ -5,7 +5,7 @@
   
 
   <div *ngIf="dailyForecasts.length > 0" class="card-container"> 
-    <h3>{{currentCityName}} </h3>
+    <h3>{{currentCityName}} ({{currentCityCountry}})</h3>
    <div *ngFor="let daily of dailyForecasts">
     <app-daily-summary [daily]="daily" [cityName]="currentCityName"></app-daily-summary>
    

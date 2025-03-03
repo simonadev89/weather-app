@@ -56,12 +56,4 @@ export class WeatherService {
   getWeather(city:string){
     return this.http.get(`${this.apiUrl}weather?q=${city}&appid=${this.apiKey}`);
   }
-
-  saveLastCity(city: string) {
-    localStorage.setItem('lastCity', city);
-  }
-
-  getLastCity(): string | null {
-  return localStorage.getItem('lastCity');
-  }
 }

@@ -37,12 +37,14 @@
     border: 3px solid #3760bb;
     box-shadow: 0 0 30px rgba(100, 181, 246, 0.5);
     box-sizing: border-box;
-
 }
 
 @media (max-width: 870px) {
     .input-container {
         padding-top: 250px;
         
+    }
+    .card-container{
+        padding: 30px;
     }
 }

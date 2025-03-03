@@ -12,7 +12,5 @@ import { WindDirectionComponent } from '../wind-direction/wind-direction.compone
 export class WeatherCardComponent {
 @Input() city!: City;
 
-
-
 }
 

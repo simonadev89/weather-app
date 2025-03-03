@@ -62,11 +62,11 @@ button {
 .details-table {
     display: flex;
     justify-content: center;
-    width: 100%;          /* Larghezza al 100% del suo contenitore */
-    max-width: 100%;       /* Non va oltre il suo genitore */
-    overflow-x: auto;      /* Se proprio qualcosa sfora, scroll orizzontale */
+    width: 100%;          
+    max-width: 100%;      
     box-sizing: border-box;
     margin: 8px;
+    flex-wrap: wrap;
 }
 
 thead tr {
@@ -87,4 +87,16 @@ th, td {
 table img {
     width: 70px;
     height: 70px;
+}
+
+@media (max-width: 870px){
+    .details-table{          
+        padding: 30px;
+        
+
+    }
+th,td{
+    padding: 3px;
+}
+
 }

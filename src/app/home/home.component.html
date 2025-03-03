@@ -1,13 +1,17 @@
 <form class="input-container" [formGroup]="FormCity" (ngSubmit)="searchCity(FormCity.value.city)">
-    <input type="text" class="form-control" placeholder="&#xf52a; Search location" formControlName="city" style="font-family: Bootstrap-icons, sans-serif;">
+    <input 
+    type="text"
+    class="form-control" 
+    placeholder="&#xf52a; Search location" 
+    formControlName="city" 
+    style="font-family: Bootstrap-icons, sans-serif;">
     <button type="submit" class="btn btn-primary" [disabled]="!FormCity.valid">Search</button>
   </form>
   
   <div *ngIf="selectedCity" class="card-container">
     <div class="card">
       
-      <app-weather-card [city]="selectedCity">
-      </app-weather-card>
+      <app-weather-card [city]="selectedCity"></app-weather-card>
     </div>
   </div>
   

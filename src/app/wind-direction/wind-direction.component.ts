@@ -21,10 +21,7 @@ export class WindDirectionComponent {
       return 'bi-arrow-90deg-left'; // Ovest
     }
   }
-
-
-  
-  }
+}
 
 
 

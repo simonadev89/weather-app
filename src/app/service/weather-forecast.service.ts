@@ -1,24 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
-
-
-export interface CityWeatherForecast {
-  cityInfo: CityInfo;
-  dailyForecasts: DailyForecast[];
-}
-
-
-export interface CityInfo  {
-  cityName: string,             //dati che non cambiano mai
-}
   
 export interface DailyForecast{
   day:string,
-  sunrise: string,
-  sunset: string,          //dati che cambiano ogni giorno
   tempMin:number,
-  tempMax:number,
+  tempMax:number, //dati che cambiano ogni giorno
   hourly: HourlyForecast[]
 }
 
@@ -39,6 +26,7 @@ export interface HourlyForecast {
 @Injectable({
   providedIn: 'root'
 })
+
 export class WeatherForecastService {
   private _apiKey= environment.apiKey;
   private _apiUrl= environment.apiUrl
@@ -48,13 +36,5 @@ export class WeatherForecastService {
 
   getWeatherForecast(city:string){
     return this.http.get(`${this._apiUrl}forecast?q=${city}&appid=${this._apiKey}`);
-  }
-
-  saveLastForecastCity(city: string) {
-    localStorage.setItem('lastCityForecast', city);
-  }
-
-  getLastForecastCity(): string | null {
-  return localStorage.getItem('lastCityForecast');
   }
 }

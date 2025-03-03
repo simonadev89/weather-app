@@ -1,0 +1,24 @@
+.container {
+    position: relative ;
+    height: 100vh;
+    padding: 1rem;
+    font-size: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    width: 50%;
+    font-size: 1rem;
+    padding: 15px;
+    max-width: 800px;  
+    min-height: 200px;
+    background: rgba(255, 255, 255, 0.595);
+    color: black;
+    margin: 0 auto;
+    border-radius: .25rem;
+    border: 3px solid #3760bb;
+    box-shadow: 0 0 30px rgba(100, 181, 246, 0.5);
+    box-sizing: border-box;
+    }

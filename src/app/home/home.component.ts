@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { City, WeatherService } from '../service/weather.service';
 import { WeatherCardComponent } from "../weather-card/weather-card.component";
+import { error } from 'node:console';
+import { RedirectCommand } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,22 +12,33 @@ import { WeatherCardComponent } from "../weather-card/weather-card.component";
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
+
 export class HomeComponent {
-public selectedCity!: City; // Questa è la città selezionata che verrà visualizzata nella scheda meteo
+public selectedCity!: City; 
 public windDirectionChange!: number; 
 
+
 FormCity!: FormGroup;
+
 constructor(private weatherService:WeatherService){ }
 
+
 ngOnInit(): void {
-this.FormCity = new FormGroup({
-city: new FormControl('', [Validators.required, Validators.minLength(3)])
-})}
+  this.FormCity = new FormGroup({
+    city: new FormControl('', [Validators.required, Validators.minLength(3)])
+  });
+}
+
 
 searchCity(city: string){
     this.weatherService.getWeather(city).subscribe((data: any) => {
       console.log(data);
-      const dateOption: Intl.DateTimeFormatOptions = {day: "2-digit", month: "long", weekday:"long"};
+
+      const dateOption: Intl.DateTimeFormatOptions = {
+        day: "2-digit", 
+        month: "long", 
+        weekday:"long"
+      };
       const date = new Date(data.dt * 1000).toLocaleDateString("en-EN", dateOption); 
       const temp = data.main.temp - 273.15;
       const feelsLike = data.main.feels_like - 273.15;
@@ -52,26 +65,21 @@ searchCity(city: string){
         windDirection: windDirection,
         sunrise: sunrise,
         sunset: sunset,
-        
-
-        
-        
-
-      
       };
+
       console.log(cityData);
         this.selectedCity = cityData;
+
         // this.weatherService.saveLastCity(city.CityName);
         this.FormCity.reset();
         
+    },
+
+    error => {
+      console.log(error);
+      alert("City not found");
+      window.location.href = '/not-found'; 
     }
-  )
-}
- 
-
-
-
-
-
-
+    );
+  }
 }
