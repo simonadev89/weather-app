@@ -5,4 +5,5 @@ publish = "dist/weather-app/browser"
 [[plugins]]
 package = "@netlify/angular-runtime"
   [plugins.inputs]
-  skip = true
+  skip = true 
+ 
