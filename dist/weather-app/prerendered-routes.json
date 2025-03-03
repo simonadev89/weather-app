@@ -1,8 +1,0 @@
-{
-  "routes": {
-    "/": {},
-    "/forecast": {},
-    "/home": {},
-    "/not-found": {}
-  }
-}
