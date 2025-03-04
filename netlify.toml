@@ -1,0 +1,14 @@
+[build]
+command = "ng build --configuration=production --base-href /"
+publish = "dist/weather-app"
+
+[functions]
+node_bundler = "esbuild"
+
+[[plugins]]
+package = "@netlify/plugin-sitemap"  
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
