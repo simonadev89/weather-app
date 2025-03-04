@@ -5,9 +5,3 @@ body {
     
 }
 
-@media (max-width: 1000px) {
-    body {
-        transform: scale(2); 
-        transform-origin: top center; 
-    }
-}
