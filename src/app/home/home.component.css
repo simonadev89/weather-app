@@ -41,8 +41,8 @@
 
 @media (max-width: 1000px) {
     .input-container {
-        padding-top: 250px;
-        
+        align-items: flex-end;
+        height: 23vh;
     }
     .card-container{
         padding: 30px;

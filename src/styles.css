@@ -1,15 +1,6 @@
 body {
     background: url('assets/meteo.jpg') center/cover fixed no-repeat;
-    height: 100vh; 
-    margin: 0; 
+    height: 100vh; /* Assicura che copra tutta l'altezza */
+    margin: 0; /* Evita spazi vuoti */
     
-}
-
-@media (max-width: 1000px) {
-    body {
-        transform: scale(1.4);
-        transform-origin: top left;
-        width: calc(100% / 1.4);
-        height: calc(100% / 1.4);
-    }
 }

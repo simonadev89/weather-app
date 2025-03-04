@@ -26,10 +26,10 @@ h3 {
 
 @media (max-width: 1000px) {
     .input-container {
-        padding: 250px 0 100px 0;
+        align-items: flex-end;
+        height: 23vh;
     }
     h3 {
         padding: 20px;
     }
-    
 }

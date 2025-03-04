@@ -1,6 +1,6 @@
 .layout {
     display: flex;
-    height: 100vh; 
+    height: 100vh;
 }
 
 .content {
@@ -9,18 +9,12 @@
     overflow-y: auto;
 }
 
-@media (max-width: 1000px) {
-        .layout {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-            }
+@media (max-width: 870px) {
+    .layout {
+        flex-direction: column;
     }
 
     .content {
-        max-width: 800px; /* Non allargare troppo */
-       
-        
-
+        padding-top: 60px; 
     }
+}
