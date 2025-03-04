@@ -27,6 +27,14 @@
     color: white; 
     transition: font-size 0.3s ease, color 0.3s ease;
 }
+.navbar-toggler-icon {
+    filter: invert(1); 
+}
+
+.navbar-toggler {
+    border: 5px solid rgba(0, 0, 0, 0.933);
+}
+
 
 @media (max-width: 1000px) {
     .custom-navbar {

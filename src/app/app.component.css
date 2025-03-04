@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 1000px) {
-    .layout {
+        .layout {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -19,9 +19,8 @@
     }
 
     .content {
-        width: 90%; /* Adatta meglio al display */
         max-width: 800px; /* Non allargare troppo */
-        
+       
         
 
     }

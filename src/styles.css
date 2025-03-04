@@ -5,3 +5,11 @@ body {
     
 }
 
+@media (max-width: 1000px) {
+    body {
+        transform: scale(1.4);
+        transform-origin: top left;
+        width: calc(100% / 1.4);
+        height: calc(100% / 1.4);
+    }
+}
