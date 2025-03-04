@@ -89,7 +89,7 @@ table img {
     height: 70px;
 }
 
-@media (max-width: 870px){
+@media (max-width: 1000px){
     .details-table{          
         padding: 30px;
         

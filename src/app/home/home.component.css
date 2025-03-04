@@ -39,7 +39,7 @@
     box-sizing: border-box;
 }
 
-@media (max-width: 870px) {
+@media (max-width: 1000px) {
     .input-container {
         padding-top: 250px;
         
