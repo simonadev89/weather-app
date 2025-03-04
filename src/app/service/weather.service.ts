@@ -54,6 +54,6 @@ export class WeatherService {
   
 
   getWeather(city:string){
-    return this.http.get(`${this.apiUrl}weather?q=${city}&appid=${this.apiKey}`);
+    return this.http.get(`${environment.apiUrl}weather?q=${city}&appid=${environment.apiKey}`);
   }
 }
